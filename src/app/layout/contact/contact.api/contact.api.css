@@ -1,0 +1,165 @@
+.page-frame {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.76) 0%, rgba(255, 255, 255, 0.94) 100%);
+  border: 1.5px solid #000;
+  border-radius: 28px;
+  padding: 44px 32px 56px;
+  box-shadow: 0 20px 55px rgba(24, 21, 56, 0.14);
+}
+
+.hero-logo-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #7464f2 0%, #5e4ee6 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px rgba(99, 85, 232, 0.35);
+}
+
+.availability-badge {
+  display: inline-block;
+  background-color: #e8f9f0;
+  color: #1e9e6a;
+  border: 1px solid #b6e9d2;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 50px;
+}
+
+.section-title {
+  color: #1e1b39;
+  font-size: 2.85rem;
+  letter-spacing: -0.8px;
+}
+
+.title-accent {
+  color: #6355e8;
+}
+
+.section-subtitle {
+  color: #1e1b39;
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.contact-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #000;
+  box-shadow: 0 12px 32px rgba(99, 85, 232, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(99, 85, 232, 0.16);
+}
+
+.card-heading {
+  color: #1e1b39;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.info-icon {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background-color: #f0eeff;
+  color: #6355e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-label {
+  color: #1e1b39;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.info-link {
+  color: #1e1b39;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.info-link:hover {
+  color: #6355e8;
+}
+
+.info-value {
+  color: #1e1b39;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.divider {
+  border-color: #e2e1f0;
+  opacity: 1;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid #e2e1f0;
+  background-color: #ffffff;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.social-btn.whatsapp {
+  color: #1e9e6a;
+}
+
+.social-btn.whatsapp:hover {
+  background-color: #e8f9f0;
+  border-color: #1e9e6a;
+}
+
+.social-btn.linkedin {
+  color: #0a66c2;
+}
+
+.social-btn.linkedin:hover {
+  background-color: #eaf3fc;
+  border-color: #0a66c2;
+}
+
+.social-btn.github {
+  color: #1e1b39;
+}
+
+.social-btn.github:hover {
+  background-color: #f0eeff;
+  border-color: #6355e8;
+  color: #6355e8;
+}
+
+@media (max-width: 768px) {
+  .page-frame {
+    padding: 32px 16px 40px;
+    border-radius: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+  }
+}

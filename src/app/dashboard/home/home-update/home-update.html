@@ -1,0 +1,127 @@
+<div class="update-card">
+  <h4 class="fw-bold mb-4">Update Home Section</h4>
+
+  <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
+    <!-- الاسم -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Name</label>
+      <input type="text" class="form-control" formControlName="name" placeholder="Your name" />
+      @if (homeForm.get('name')?.invalid && homeForm.get('name')?.touched) {
+        <small class="text-danger">الاسم مطلوب</small>
+      }
+    </div>
+
+    <!-- الوظيفة -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Job Title</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="jobTitle"
+        placeholder="e.g. Full Stack Developer"
+      />
+      @if (homeForm.get('jobTitle')?.invalid && homeForm.get('jobTitle')?.touched) {
+        <small class="text-danger">المسمى الوظيفي مطلوب</small>
+      }
+    </div>
+
+    <!-- الـ Hero Tagline -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Hero Tagline</label>
+      <textarea
+        class="form-control"
+        formControlName="heroTagline"
+        rows="3"
+        placeholder="الجملة اللي بتظهر تحت اسمك"
+      ></textarea>
+      @if (homeForm.get('heroTagline')?.invalid && homeForm.get('heroTagline')?.touched) {
+        <small class="text-danger">الـ tagline مطلوبة</small>
+      }
+    </div>
+
+    <!-- حالة التفرغ -->
+    <div class="row mb-3">
+      <div class="col-md-4 d-flex align-items-center">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" formControlName="isAvailable" />
+          <label class="form-check-label fw-semibold">Available</label>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="availabilityText"
+          placeholder="e.g. Available for new projects"
+        />
+      </div>
+    </div>
+
+    <!-- نبذة -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">About Text</label>
+      <textarea
+        class="form-control"
+        formControlName="aboutText"
+        rows="4"
+        placeholder="نبذة عنك (100 حرف على الأقل)"
+      ></textarea>
+    </div>
+
+    <div class="row">
+      <!-- الإيميل -->
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">Email</label>
+        <input type="email" class="form-control" formControlName="email" />
+      </div>
+      <!-- رابط الـ CV -->
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">CV URL</label>
+        <input type="text" class="form-control" formControlName="cvUrl" />
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- لينكدإن -->
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">LinkedIn</label>
+        <input type="text" class="form-control" formControlName="linkedin" />
+      </div>
+      <!-- جيتهاب -->
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">GitHub</label>
+        <input type="text" class="form-control" formControlName="github" />
+      </div>
+    </div>
+
+    <!-- صورة البروفايل -->
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Profile Image</label>
+      <div class="d-flex align-items-center gap-3">
+        @if (currentImageUrl) {
+          <img [src]="currentImageUrl" alt="Profile" class="profile-preview" />
+        }
+        <input
+          type="file"
+          class="form-control"
+          accept="image/*"
+          (change)="onChange($event)"
+        />
+      </div>
+    </div>
+
+    <!-- زرار الحفظ -->
+    <button type="submit" class="btn btn-purple" [disabled]="isLoading">
+      @if (isLoading) {
+        جاري الحفظ...
+      } @else {
+        Save Changes
+      }
+    </button>
+
+    @if (message) {
+      <div class="alert alert-success mt-3 mb-0 py-2">{{ message }}</div>
+    }
+  </form>
+</div>
+

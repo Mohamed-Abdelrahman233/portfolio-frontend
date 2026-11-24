@@ -1,0 +1,94 @@
+.hero-logo-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #7464f2 0%, #5e4ee6 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px rgba(99, 85, 232, 0.35);
+}
+
+.section-title {
+  color: #1e1b39;
+  font-size: 2.85rem;
+  letter-spacing: -0.8px;
+}
+
+.title-accent {
+  color: #6355e8;
+}
+
+.section-subtitle {
+  color: #1e1b39;
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #000;
+  box-shadow: 0 12px 32px rgba(99, 85, 232, 0.08);
+}
+
+.badge-subtitle {
+  background-color: #f0eeff;
+  color: #6355e8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 13px;
+  border-radius: 50px;
+}
+
+.about-name {
+  color: #1e1b39;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.about-job {
+  color: #6355e8;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.divider {
+  border-color: #d2cdf3;
+  opacity: 1;
+}
+
+.about-text {
+  color: #1e1b39;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.btn-brand-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #7464f2 0%, #5e4ee6 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(99, 85, 232, 0.25);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-brand-primary:hover {
+  opacity: 0.92;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .section-subtitle {
+    font-size: 1.05rem;
+  }
+}

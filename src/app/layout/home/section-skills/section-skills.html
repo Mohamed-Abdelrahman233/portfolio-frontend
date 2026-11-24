@@ -1,0 +1,20 @@
+<section class="skills-section">
+  <div class="shared-container text-center">
+    <!-- Section Header -->
+    <div class="text-center mx-auto mb-5" style="max-width: 640px">
+      <h2 class="section-heading fw-bold mb-2">Core <span class="title-accent">Skills</span></h2>
+      <p class="section-subtitle mb-0">The tools and technologies I work with most.</p>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      @for (skill of skillsList | slice: 0 : 10; track skill._id) {
+        <div class="skill-chip d-flex align-items-center gap-2">
+          @if (skill.iconImg) {
+            <img [src]="imgBaseUrl + skill.iconImg" [alt]="skill.name" width="24" height="24" />
+          }
+          <span class="skill-name fw-semibold">{{ skill.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

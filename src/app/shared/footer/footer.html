@@ -1,0 +1,61 @@
+<footer class="main-footer mt-auto">
+  <div class="shared-container">
+    <ul class="nav justify-content-center footer-nav pb-3 mb-3 gap-2 gap-md-3">
+      <li class="nav-item">
+        <a routerLink="/home" routerLinkActive="active-footer-link" class="nav-link footer-link">
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/project" routerLinkActive="active-footer-link" class="nav-link footer-link">
+          Projects
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          routerLink="/services"
+          routerLinkActive="active-footer-link"
+          class="nav-link footer-link"
+        >
+          Services
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/about" routerLinkActive="active-footer-link" class="nav-link footer-link">
+          About
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/contact" routerLinkActive="active-footer-link" class="nav-link footer-link">
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    @if (myProfile) {
+      <div class="d-flex justify-content-center flex-wrap gap-2 gap-md-3 mb-3">
+        @if (myProfile.email) {
+          <a [href]="'mailto:' + myProfile.email" class="footer-social-link">Email</a>
+        }
+        @if (myProfile.linkedin) {
+          <a [href]="myProfile.linkedin" target="_blank" class="footer-social-link">LinkedIn</a>
+        }
+        @if (myProfile.github) {
+          <a [href]="myProfile.github" target="_blank" class="footer-social-link">GitHub</a>
+        }
+        @if (myProfile.whatsapp) {
+          <a
+            [href]="'https://wa.me/' + myProfile.whatsapp"
+            target="_blank"
+            class="footer-social-link"
+            >WhatsApp</a
+          >
+        }
+      </div>
+    }
+
+    <p class="text-center footer-copy mb-0">
+      © 2026 <span class="brand-name">Mohamed Abdelrahman</span>. All rights reserved.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,72 @@
+.manage-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.skills-table {
+  font-size: 0.92rem;
+}
+
+.skills-table th {
+  color: #6f6c8f;
+  font-weight: 600;
+  border-bottom: 2px solid #ececf6;
+}
+
+.skills-table td {
+  vertical-align: middle;
+}
+
+.thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ececf6;
+  background: #f8f7ff;
+}
+
+.tag-pill {
+  display: inline-block;
+  background: #f0eeff;
+  color: #6355e8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-inline-end: 4px;
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, #7464f2 0%, #6355e8 100%);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 9px 20px;
+  border: none;
+  border-radius: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-purple:hover {
+  opacity: 0.92;
+  color: #ffffff;
+}
+
+.btn-purple:disabled {
+  opacity: 0.65;
+}
+
+.btn-edit {
+  background: #f0eeff;
+  color: #6355e8;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-edit:hover {
+  background: #e2ddff;
+  color: #5848d6;
+}

@@ -1,0 +1,27 @@
+<app-skill-list
+  (addClicked)="openAddForm()"
+  (editClicked)="openEditForm($event)"
+  (deleted)="onDeleted()"
+  (failed)="onFailed($event)"
+>
+  @if (message) {
+    <div class="alert alert-success py-2">{{ message }}</div>
+  }
+
+  @if (showForm && !editingId) {
+    <app-skill-add
+      (added)="onSaved()"
+      (failed)="onFailed($event)"
+      (cancelled)="cancelForm()"
+    ></app-skill-add>
+  }
+
+  @if (showForm && editingId && selectedSkill) {
+    <app-skill-update
+      [skill]="selectedSkill"
+      (updated)="onSaved()"
+      (failed)="onFailed($event)"
+      (cancelled)="cancelForm()"
+    ></app-skill-update>
+  }
+</app-skill-list>

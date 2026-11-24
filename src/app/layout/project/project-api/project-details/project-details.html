@@ -1,0 +1,58 @@
+@if (projectList) {
+  <div class="project-card h-100 d-flex flex-column">
+    <!-- صورة المشروع -->
+    <div class="project-img-box position-relative">
+      @if (projectList.image) {
+        <img
+          [src]="imgBaseUrl + projectList.image"
+          [alt]="projectList.title"
+          class="project-img"
+        />
+      }
+      @if (projectList.isFeatured) {
+        <span class="featured-badge">Featured</span>
+      }
+    </div>
+
+    <!-- تفاصيل المشروع -->
+    <div class="card-body d-flex flex-column p-4">
+      <h5 class="project-title fw-bold mb-2">{{ projectList.title }}</h5>
+      <p class="project-desc mb-3">{{ projectList.description }}</p>
+
+      <!-- الـ Tags -->
+      @if (projectList.tags && projectList.tags.length > 0) {
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          @for (tag of projectList.tags | slice: 0 : 4; track $index) {
+            <span class="tech-tag">{{ tag }}</span>
+          }
+          @if (projectList.tags.length > 4) {
+            <span class="tech-tag">+{{ projectList.tags.length - 4 }}</span>
+          }
+        </div>
+      }
+
+      <!-- أزرار Code و Live Demo -->
+      <div class="d-flex gap-3 pt-2 mt-auto">
+        @if (projectList.githubUrl) {
+          <a
+            [href]="projectList.githubUrl"
+            target="_blank"
+            class="btn-brand-secondary flex-fill text-center"
+          >
+            Code
+          </a>
+        }
+
+        @if (projectList.liveUrl) {
+          <a
+            [href]="projectList.liveUrl"
+            target="_blank"
+            class="btn-brand-primary flex-fill text-center"
+          >
+            Live Demo
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+}

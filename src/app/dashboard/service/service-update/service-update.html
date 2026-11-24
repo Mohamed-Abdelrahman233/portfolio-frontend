@@ -1,0 +1,6 @@
+<app-service-form
+  [service]="service"
+  [isLoading]="isLoading"
+  (submitted)="onSubmit($event)"
+  (cancelled)="cancelled.emit()"
+></app-service-form>

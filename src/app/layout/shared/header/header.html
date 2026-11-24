@@ -1,0 +1,89 @@
+<header class="main-navbar">
+  <div class="shared-container d-flex align-items-center justify-content-between position-relative">
+    <!-- أيقونة القايمة + اللوجو على الشمال -->
+    <div class="d-flex align-items-center gap-3">
+      <button
+        type="button"
+        class="menu-toggle"
+        (click)="toggleMenu()"
+        aria-label="Menu"
+        [attr.aria-expanded]="menuOpen"
+      >
+        @if (menuOpen) {
+          <span aria-hidden="true">✕</span>
+        } @else {
+          <span aria-hidden="true">☰</span>
+        }
+      </button>
+      <a routerLink="home" class="brand-logo text-decoration-none" aria-label="Home">MD.</a>
+    </div>
+
+    <!-- اللينكات في المنتصف (ديسكتوب) -->
+    <ul class="nav nav-pills desktop-nav mx-auto gap-2 gap-md-3">
+      <li class="nav-item">
+        <a routerLink="home" routerLinkActive="active" class="nav-link custom-nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="project" routerLinkActive="active" class="nav-link custom-nav-link"
+          >Projects</a
+        >
+      </li>
+      <li class="nav-item">
+        <a routerLink="services" routerLinkActive="active" class="nav-link custom-nav-link"
+          >Services</a
+        >
+      </li>
+      <li class="nav-item">
+        <a routerLink="about" routerLinkActive="active" class="nav-link custom-nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="contact" routerLinkActive="active" class="nav-link custom-nav-link"
+          >Contact</a
+        >
+      </li>
+    </ul>
+
+    <!-- زرار الـ CTA -->
+    <a routerLink="/contact" class="nav-cta font-arabic flex-shrink-0" dir="rtl">تواصل معي</a>
+  </div>
+
+  <!-- خلفية بتلقط الضغط برا القايمة -->
+  @if (menuOpen) {
+    <div class="menu-backdrop" (click)="closeMenu()"></div>
+  }
+
+  <!-- القايمة المنسدلة للموبايل -->
+  <nav class="mobile-menu" [class.open]="menuOpen" aria-label="Mobile navigation">
+    <a routerLink="home" routerLinkActive="active-mobile" class="mobile-nav-link" (click)="closeMenu()"
+      >Home</a
+    >
+    <a
+      routerLink="project"
+      routerLinkActive="active-mobile"
+      class="mobile-nav-link"
+      (click)="closeMenu()"
+      >Projects</a
+    >
+    <a
+      routerLink="services"
+      routerLinkActive="active-mobile"
+      class="mobile-nav-link"
+      (click)="closeMenu()"
+      >Services</a
+    >
+    <a
+      routerLink="about"
+      routerLinkActive="active-mobile"
+      class="mobile-nav-link"
+      (click)="closeMenu()"
+      >About</a
+    >
+    <a
+      routerLink="contact"
+      routerLinkActive="active-mobile"
+      class="mobile-nav-link"
+      (click)="closeMenu()"
+      >Contact</a
+    >
+  </nav>
+</header>

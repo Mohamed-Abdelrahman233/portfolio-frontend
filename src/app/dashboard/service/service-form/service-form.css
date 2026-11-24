@@ -1,0 +1,25 @@
+.form-panel {
+  background: #f8f7ff;
+  border: 1px solid #e6e3f7;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, #7464f2 0%, #6355e8 100%);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 9px 20px;
+  border: none;
+  border-radius: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-purple:hover {
+  opacity: 0.92;
+  color: #ffffff;
+}
+
+.btn-purple:disabled {
+  opacity: 0.65;
+}

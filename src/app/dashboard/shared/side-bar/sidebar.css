@@ -1,0 +1,69 @@
+.sidebar-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+}
+
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+.sidebar-toggle {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sidebar-toggle .caret {
+  transition: transform 0.2s ease;
+  font-size: 0.8rem;
+}
+
+.sidebar-toggle[aria-expanded="false"] .caret {
+  transform: rotate(-90deg);
+}
+
+.sidebar-submenu {
+  margin-inline-start: 14px;
+  padding-inline-start: 10px;
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sub-link {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sub-link .sub-icon {
+  font-style: normal;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.sub-link:hover {
+  color: #ffffff;
+}
+
+.sub-link.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.sub-link.delete {
+  color: #ff6b7a;
+}
+
+.sub-link.delete:hover,
+.sub-link.delete.active {
+  color: #ff6b7a;
+  background-color: rgba(255, 107, 122, 0.12);
+}

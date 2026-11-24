@@ -1,0 +1,35 @@
+<main class="home-page">
+  <!-- 1. Hero -->
+  <app-section-profile></app-section-profile>
+
+  <!-- 2. Services -->
+  <app-section-services></app-section-services>
+
+  <!-- 3. Featured Projects -->
+  <app-section-projects></app-section-projects>
+
+  <!-- 4. Skills -->
+  <app-section-skills></app-section-skills>
+
+  <!-- 5. Call To Action -->
+  <section class="cta-section">
+    <div class="shared-container">
+      <div class="cta-card font-arabic text-center mx-auto" dir="rtl">
+        <h2 class="cta-title fw-bold mb-3">
+          عندك مشروع؟ <span class="cta-accent">خلينا نشتغل سوا</span>
+        </h2>
+        <p class="cta-subtitle mx-auto mb-4">
+          أنا دايمًا مفتوح لمشاريع جديدة وأفكار إبداعية وفرص أكون فيها جزء من رؤيتك.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a routerLink="/contact" class="cta-btn-primary px-4 py-2">تواصل معي</a>
+          @if (myProfile?.cvUrl) {
+            <a [href]="myProfile?.cvUrl" target="_blank" class="cta-btn-secondary px-4 py-2">
+              حمّل السيرة الذاتية
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

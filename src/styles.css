@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-soft: #e9e5fd;
+  --bg-white: #ffffff;
+}
+
+.shared-container {
+  width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 64px);
+}
+
+.font-arabic {
+  font-family: 'Cairo', 'Segoe UI', sans-serif;
+}

@@ -1,0 +1,8 @@
+.dashboard-layout {
+  min-height: 100vh;
+}
+
+.dashboard-content {
+  min-width: 0;
+  padding: 24px;
+}

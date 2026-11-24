@@ -1,0 +1,55 @@
+@if (myProfile) {
+  <section class="hero-profile">
+    <div class="shared-container">
+      <div class="hero-row row align-items-center flex-column-reverse flex-md-row justify-content-between g-4">
+      <!-- Text -->
+      <div class="col-md-6 text-center text-md-start">
+        @if (myProfile.isAvailable) {
+          <span class="hero-badge d-inline-block mb-4">
+            {{ myProfile.availabilityText || 'Available for new projects' }}
+          </span>
+        }
+
+        <h1 class="hero-heading mb-3">
+          <span class="hero-name">Hi, I'm {{ cleanName }},</span><br />
+          <span class="hero-role">{{ myProfile.jobTitle }}</span>
+        </h1>
+
+        <p class="hero-desc mb-4">{{ myProfile.heroTagline }}</p>
+
+        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start mb-4">
+          <a routerLink="/contact" class="hero-btn-primary font-arabic" dir="rtl">تواصل معي</a>
+          <a routerLink="/project" class="hero-btn-secondary font-arabic" dir="rtl">شوف أعمالي</a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats d-flex gap-4 justify-content-center justify-content-md-start">
+          <div class="hero-stat">
+            <span class="stat-num d-block">20+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num d-block">3+</span>
+            <span class="stat-label">Years experience</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num d-block">100%</span>
+            <span class="stat-label">Client focus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="col-md-6 text-center text-md-end">
+        <div class="hero-img-ring mx-auto ms-md-auto me-md-0">
+          <img
+            [src]="imgBaseUrl + myProfile.image"
+            [alt]="myProfile.name"
+            class="hero-img"
+          />
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+}

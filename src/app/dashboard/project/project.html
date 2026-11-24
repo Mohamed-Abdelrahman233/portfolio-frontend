@@ -1,0 +1,27 @@
+<app-project-list
+  (addClicked)="openAddForm()"
+  (editClicked)="openEditForm($event)"
+  (deleted)="onDeleted()"
+  (failed)="onFailed($event)"
+>
+  @if (message) {
+    <div class="alert alert-success py-2">{{ message }}</div>
+  }
+
+  @if (showForm && !editingId) {
+    <app-project-add
+      (added)="onSaved()"
+      (failed)="onFailed($event)"
+      (cancelled)="cancelForm()"
+    ></app-project-add>
+  }
+
+  @if (showForm && editingId && selectedProject) {
+    <app-project-update
+      [project]="selectedProject"
+      (updated)="onSaved()"
+      (failed)="onFailed($event)"
+      (cancelled)="cancelForm()"
+    ></app-project-update>
+  }
+</app-project-list>

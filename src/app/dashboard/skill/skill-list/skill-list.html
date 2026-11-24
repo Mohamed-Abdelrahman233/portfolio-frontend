@@ -1,0 +1,53 @@
+<div class="manage-card">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-bold mb-0">Skills</h4>
+    <button type="button" class="btn btn-purple" (click)="addClicked.emit()">
+      + Add New Skill
+    </button>
+  </div>
+
+  <ng-content></ng-content>
+
+  <!-- جدول المهارات -->
+  @if (skills.length > 0) {
+    <div class="table-responsive">
+      <table class="table align-middle skills-table">
+        <thead>
+          <tr>
+            <th>Icon</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (skill of skills; track skill._id) {
+            <tr>
+              <td>
+                @if (skill.iconImg) {
+                  <img [src]="imgBaseUrl + skill.iconImg" [alt]="skill.name" class="thumb" />
+                }
+              </td>
+              <td class="fw-semibold">{{ skill.name }}</td>
+              <td>
+                <span class="tag-pill">{{ skill.category }}</span>
+              </td>
+              <td class="text-end">
+                <button class="btn btn-sm btn-edit me-2" (click)="editClicked.emit(skill)">
+                  Edit
+                </button>
+                <app-skill-delete
+                  [id]="skill._id"
+                  (deleted)="deleted.emit()"
+                  (failed)="failed.emit($event)"
+                ></app-skill-delete>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <p class="text-muted text-center py-4 mb-0">No skills yet — add your first one.</p>
+  }
+</div>

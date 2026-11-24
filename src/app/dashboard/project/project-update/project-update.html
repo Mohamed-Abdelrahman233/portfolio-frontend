@@ -1,0 +1,6 @@
+<app-project-form
+  [project]="project"
+  [isLoading]="isLoading"
+  (submitted)="onSubmit($event)"
+  (cancelled)="cancelled.emit()"
+></app-project-form>

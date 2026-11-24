@@ -1,0 +1,26 @@
+.update-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, #7464f2 0%, #6355e8 100%);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-purple:hover {
+  opacity: 0.92;
+  color: #ffffff;
+}
+
+.btn-purple:disabled {
+  opacity: 0.65;
+}

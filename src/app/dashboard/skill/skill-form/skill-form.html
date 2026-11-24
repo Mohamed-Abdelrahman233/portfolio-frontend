@@ -1,0 +1,39 @@
+<div class="form-panel mb-4">
+  <h6 class="fw-bold mb-3">{{ skill ? 'Edit Skill' : 'Add New Skill' }}</h6>
+  <form [formGroup]="skillForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Name</label>
+      <input type="text" class="form-control" formControlName="name" />
+      @if (skillForm.get('name')?.invalid && skillForm.get('name')?.touched) {
+        <small class="text-danger">الاسم مطلوب</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Category</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="category"
+        placeholder="Frontend, Backend, Tools..."
+      />
+      @if (skillForm.get('category')?.invalid && skillForm.get('category')?.touched) {
+        <small class="text-danger">التصنيف مطلوب</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Icon Image</label>
+      <input type="file" class="form-control" accept="image/*" (change)="onChange($event)" />
+    </div>
+
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-purple" [disabled]="isLoading">
+        {{ isLoading ? 'جاري الحفظ...' : skill ? 'Save Changes' : 'Add Skill' }}
+      </button>
+      <button type="button" class="btn btn-outline-secondary" (click)="cancelled.emit()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

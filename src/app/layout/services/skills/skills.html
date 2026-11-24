@@ -1,0 +1,35 @@
+<div class="skills-block">
+  <div class="text-center mx-auto mb-4" style="max-width: 720px">
+    <h2 class="fw-bold skills-title mb-3">Technical <span class="title-accent">Skills</span></h2>
+    <p class="skills-subtitle mb-0">The tools and technologies I work with every day.</p>
+  </div>
+
+  <div class="row g-3 justify-content-center mx-auto" style="max-width: 1100px">
+    @for (skill of skillsList; track skill._id) {
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="skill-card h-100 text-center p-3">
+          <!-- عرض الأيقونة مع رابط السيرفر -->
+          @if (skill.iconImg) {
+            <div class="skill-icon-box mx-auto mb-2">
+              <img
+                [src]="imgBaseUrl + skill.iconImg"
+                [alt]="skill.name"
+                class="skill-icon"
+              />
+            </div>
+          }
+
+          <!-- اسم المهارة -->
+          <h5 class="skill-name mb-1">{{ skill.name }}</h5>
+
+          <!-- التصنيف -->
+          <span class="skill-category">{{ skill.category }}</span>
+        </div>
+      </div>
+    } @empty {
+      <div class="col-12 text-center text-muted">
+        <p>No skills added yet.</p>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<app-service-list
+  (addClicked)="openAddForm()"
+  (editClicked)="openEditForm($event)"
+  (deleted)="onDeleted()"
+  (failed)="onFailed($event)"
+>
+  @if (message) {
+    <div class="alert alert-success py-2">{{ message }}</div>
+  }
+
+  @if (showForm && !editingId) {
+    <app-service-add
+      (added)="onSaved()"
+      (failed)="onFailed($event)"
+      (cancelled)="cancelForm()"
+    ></app-service-add>
+  }
+
+  @if (showForm && editingId && selectedService) {
+    <app-service-update
+      [service]="selectedService"
+      (updated)="onSaved()"
+      (failed)="onFailed($event)"
+      (cancelled)="cancelForm()"
+    ></app-service-update>
+  }
+</app-service-list>

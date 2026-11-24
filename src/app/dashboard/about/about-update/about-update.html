@@ -1,0 +1,53 @@
+<div class="update-card">
+  <h4 class="fw-bold mb-4">Update About Section</h4>
+
+  <form [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
+    <!-- النص الرئيسي -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">About Text</label>
+      <textarea
+        class="form-control"
+        formControlName="aboutText"
+        rows="6"
+        placeholder="اكتب نبذة عنك"
+      ></textarea>
+      @if (aboutForm.get('aboutText')?.invalid && aboutForm.get('aboutText')?.touched) {
+        <small class="text-danger">النص مطلوب</small>
+      }
+    </div>
+
+    <!-- الوظيفة -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Job Title</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="jobTitle"
+        placeholder="e.g. Full Stack Developer"
+      />
+    </div>
+
+    <!-- الموقع -->
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Location</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="location"
+        placeholder="e.g. Cairo, Egypt"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-purple" [disabled]="isLoading">
+      @if (isLoading) {
+        جاري الحفظ...
+      } @else {
+        Save Changes
+      }
+    </button>
+
+    @if (message) {
+      <div class="alert alert-success mt-3 mb-0 py-2">{{ message }}</div>
+    }
+  </form>
+</div>

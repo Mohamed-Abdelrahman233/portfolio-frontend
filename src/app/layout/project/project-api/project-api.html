@@ -1,0 +1,58 @@
+<section class="projects-section">
+  <div class="projects-container">
+    <!-- Header -->
+    <div class="text-center mx-auto mb-5" style="max-width: 620px">
+      <div class="hero-icon-box mx-auto mb-3">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </div>
+
+      <h1 class="fw-bold section-title mb-3">My <span class="title-accent">Projects</span></h1>
+
+      <p class="section-subtitle mb-0">
+        A collection of full-stack web applications, APIs, and modern interfaces built to solve
+        real-world problems.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    @if (projectList && projectList.length > 0) {
+      <div class="projects-grid">
+        @for (item of projectList; track item._id || $index) {
+          <app-project-details [projectList]="item"></app-project-details>
+        }
+      </div>
+    } @else if (projectList && projectList.length === 0) {
+      <div class="empty-state text-center">
+        <p class="mb-0">No projects yet</p>
+      </div>
+    } @else {
+      <div class="projects-grid">
+        @for (i of [1, 2, 3]; track i) {
+          <div class="skeleton-card"></div>
+        }
+      </div>
+    }
+
+    <!-- CTA -->
+    <div class="cta-card text-center mx-auto">
+      <h3 class="cta-title fw-bold mb-2">Like what you see? Let's build yours</h3>
+      <p class="cta-subtitle mx-auto mb-4">
+        I'm always open to new projects, creative ideas, and opportunities to be part of your
+        vision.
+      </p>
+      <a routerLink="/contact" class="cta-btn">Contact Me</a>
+    </div>
+  </div>
+</section>

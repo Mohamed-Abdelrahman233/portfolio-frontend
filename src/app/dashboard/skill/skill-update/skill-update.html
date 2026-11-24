@@ -1,0 +1,6 @@
+<app-skill-form
+  [skill]="skill"
+  [isLoading]="isLoading"
+  (submitted)="onSubmit($event)"
+  (cancelled)="cancelled.emit()"
+></app-skill-form>

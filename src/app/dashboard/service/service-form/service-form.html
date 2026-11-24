@@ -1,0 +1,34 @@
+<div class="form-panel mb-4">
+  <h6 class="fw-bold mb-3">{{ service ? 'Edit Service' : 'Add New Service' }}</h6>
+  <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Title</label>
+      <input type="text" class="form-control" formControlName="title" />
+      @if (serviceForm.get('title')?.invalid && serviceForm.get('title')?.touched) {
+        <small class="text-danger">العنوان مطلوب</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Description</label>
+      <textarea class="form-control" formControlName="description" rows="3"></textarea>
+      @if (serviceForm.get('description')?.invalid && serviceForm.get('description')?.touched) {
+        <small class="text-danger">الوصف مطلوب</small>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Icon Image</label>
+      <input type="file" class="form-control" accept="image/*" (change)="onChange($event)" />
+    </div>
+
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-purple" [disabled]="isLoading">
+        {{ isLoading ? 'جاري الحفظ...' : service ? 'Save Changes' : 'Add Service' }}
+      </button>
+      <button type="button" class="btn btn-outline-secondary" (click)="cancelled.emit()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

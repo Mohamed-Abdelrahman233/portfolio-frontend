@@ -1,0 +1,33 @@
+<section class="services-preview">
+  <div class="shared-container">
+    <!-- Section Header -->
+    <div class="text-center mx-auto mb-5" style="max-width: 640px">
+      <h2 class="section-heading fw-bold mb-2">My <span class="title-accent">Services</span></h2>
+      <p class="section-subtitle mb-0">What I can help you build.</p>
+    </div>
+
+    <!-- Top 3 Services -->
+    <div class="cards-grid">
+      @for (service of servicesList | slice: 0 : 3; track service._id) {
+        <div class="service-card h-100">
+            <div class="service-icon-box mb-3">
+              <img
+                [src]="imgBaseUrl + service.iconImg"
+                [alt]="service.title"
+                class="service-icon"
+              />
+            </div>
+            <h4 class="service-title fw-bold mb-2">{{ cleanTitle(service.title) }}</h4>
+            <p class="service-desc mb-0">{{ service.description }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- View All -->
+    <div class="text-center mt-5">
+      <a routerLink="/services" class="btn-brand-primary btn-view-all font-arabic" dir="rtl"
+        >شوف كل الخدمات</a
+      >
+    </div>
+  </div>
+</section>

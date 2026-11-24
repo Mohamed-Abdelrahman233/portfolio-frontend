@@ -1,0 +1,72 @@
+<div class="form-panel mb-4">
+  <h6 class="fw-bold mb-3">{{ project ? 'Edit Project' : 'Add New Project' }}</h6>
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">Title</label>
+        <input type="text" class="form-control" formControlName="title" />
+        @if (projectForm.get('title')?.invalid && projectForm.get('title')?.touched) {
+          <small class="text-danger">العنوان مطلوب</small>
+        }
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">Tags (افصل بينهم بفاصلة)</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="tags"
+          placeholder="Angular, Node.js, MongoDB"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Description</label>
+      <textarea class="form-control" formControlName="description" rows="3"></textarea>
+      @if (projectForm.get('description')?.invalid && projectForm.get('description')?.touched) {
+        <small class="text-danger">الوصف مطلوب</small>
+      }
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">GitHub URL</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="githubUrl"
+          placeholder="https://github.com/user/repo"
+        />
+        @if (projectForm.get('githubUrl')?.invalid && projectForm.get('githubUrl')?.touched) {
+          <small class="text-danger">رابط الجيتهاب مطلوب</small>
+        }
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">Live URL (اختياري)</label>
+        <input type="text" class="form-control" formControlName="liveUrl" placeholder="https://..." />
+      </div>
+    </div>
+
+    <div class="row align-items-end">
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-semibold">Project Image</label>
+        <input type="file" class="form-control" accept="image/*" (change)="onChange($event)" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" formControlName="isFeatured" />
+          <label class="form-check-label fw-semibold">Featured</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-purple" [disabled]="isLoading">
+        {{ isLoading ? 'جاري الحفظ...' : project ? 'Save Changes' : 'Add Project' }}
+      </button>
+      <button type="button" class="btn btn-outline-secondary" (click)="cancelled.emit()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,7 @@
+<div class="row g-4 justify-content-center mx-auto" style="max-width: 1320px">
+  @for (service of servicesList; track service) {
+    <div class="col-md-6 col-lg-4">
+      <app-service-detials [services_List]="service"></app-service-detials>
+    </div>
+  }
+</div>
